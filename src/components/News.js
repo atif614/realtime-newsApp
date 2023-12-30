@@ -55,12 +55,12 @@ export class News extends Component {
             <div className='container my-4'>
                 <h2 className='text-center'>Top Headlines</h2>
                 <div className='row'>
-                    {this.state.articles.map((news) => {
-                        return <div key={news.url} className='col-md-4'>
+                    {this.state.articles.map((news) => 
+                         <div key={news.url} className='col-md-4'>
                             <NewsItem newsUrl={news.url} title={news.tite ?? news.title.slice(0, 15)} description={news.description && news.description.slice(0, 88)} imageUrl={!news.urlToImage ? 'https://media.assettype.com/bloombergquint%2F2023-11%2Fa24657ee-ce40-409f-9fa4-613c28626c61%2Fbreakslow_iGEivm_lkdQ_unsplash.jpg?w=1200&auto=format%2Ccompress&ogImage=true' : news.urlToImage} />
                             {/* <NewsItem newsUrl={news.url} title={news.title} description={news.description} imageUrl={news.urlToImage} /> */}
                         </div>
-                    })}
+                    )}
                 </div>
                 <div className='container d-flex justify-content-between'>
                     <button disabled={this.state.page <= 1} className='btn btn-dark' onClick={this.handlePrevClick}>&larr;Previous</button>
